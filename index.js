@@ -11,7 +11,7 @@ const port = process.env.PORT || 5000;
 
 
 // Connection between admin sdk and firebase
-const serviceAccount = require('./iphone-bd-firebase-adminsdk.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
 
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
